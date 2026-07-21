@@ -7,11 +7,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-jest": "^30.4.1",
     "body-parser": "^1.20.0",
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^8.0.4",
+    "@babel/core": "^8.0.1",
+    "@babel/node": "^8.0.1",
+    "@babel/preset-env": "^8.0.2"
   }
 }

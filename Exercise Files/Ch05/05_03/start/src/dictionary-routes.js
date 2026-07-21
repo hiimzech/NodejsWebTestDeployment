@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { save } from "./lib.js";
-import skiTerms from "../data/skiTerms.json" assert { type: "json" };
+import skiTerms from "../data/skiTerms.json" with { type: "json" };
 import bodyParser from "body-parser";
 const router = new Router();
 

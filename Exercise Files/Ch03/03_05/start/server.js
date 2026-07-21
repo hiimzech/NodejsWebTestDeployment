@@ -1,5 +1,5 @@
 import express from "express";
-import skiTerms from "./ski-terms.json" assert { type: "json" };
+import skiTerms from "./ski-terms.json" with { type: "json" };
 import bodyParser from "body-parser";
 import fs from "fs";
 
@@ -20,6 +20,14 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use(bodyParser.json())
+app.use((req, res, next) => {
+  console.log(`${req.method} request for ${req.url}`)
+  if (Object.keys(req.body).length) {
+    console.log(req.body);
+  }
+})
 
 app.post("/dictionary", bodyParser.json(), (req, res) => {
   definitions.push(req.body);
